@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guillermo R. Cortes — Contracts & Legal Operations</title>
+<meta name="description" content="Guillermo R. Cortes — Project Management and Legal Operations professional with 9+ years of experience. US citizen available for relocation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #111118;
+  --ink2: #2c2c38;
+  --muted: #6b6b78;
+  --faint: #ebebf0;
+  --fainter: #f5f5f8;
+  --white: #ffffff;
+  --accent: #1a1aff;
+  --accent-light: rgba(26,26,255,0.08);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+  --max: 1080px;
+  --nav-h: 64px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--faint);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.nav-name {
+  font-family: var(--mono);
+  font-size: .78rem;
+  font-weight: 400;
+  letter-spacing: .5px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .15s;
+}
+
+.nav-links a:hover { color: var(--ink); }
+
+/* ── SECTIONS ── */
+section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+section + section {
+  border-top: 1px solid var(--faint);
+}
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: calc(var(--nav-h) + 4rem);
+  padding-bottom: 4rem;
+}
+
+.hero-label {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp .6s ease forwards .1s;
+}
+
+.hero-name {
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -1px;
+  color: var(--ink);
+  margin-bottom: .5rem;
+  opacity: 0;
+  animation: fadeUp .7s ease forwards .2s;
+}
+
+.hero-name em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--muted);
+}
+
+.hero-role {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp .7s ease forwards .35s;
+}
+
+.hero-desc {
+  max-width: 560px;
+  font-size: 1rem;
+  color: var(--ink2);
+  line-height: 1.75;
+  margin-bottom: 3rem;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeUp .7s ease forwards .5s;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeUp .7s ease forwards .65s;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: .65rem;
+  letter-spacing: .5px;
+  color: var(--muted);
+  background: var(--fainter);
+  border: 1px solid var(--faint);
+  border-radius: 3px;
+  padding: .3rem .7rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp .7s ease forwards .8s;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--white);
+  padding: .75rem 1.8rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: .85rem;
+  font-weight: 400;
+  letter-spacing: .3px;
+  transition: background .15s;
+}
+.btn-primary:hover { background: var(--accent); }
+
+.btn-secondary {
+  color: var(--ink);
+  padding: .75rem 1.8rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: .85rem;
+  font-weight: 400;
+  border: 1px solid var(--faint);
+  transition: border-color .15s, color .15s;
+}
+.btn-secondary:hover { border-color: var(--ink); }
+
+/* ── SECTION HEADERS ── */
+.sec-header {
+  margin-bottom: 3.5rem;
+}
+
+.sec-label {
+  font-family: var(--mono);
+  font-size: .65rem;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: .8rem;
+  display: block;
+}
+
+.sec-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.sec-title em {
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* ── EXPERIENCE ── */
+.exp-list { display: grid; gap: 3rem; }
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.exp-item.visible { opacity: 1; transform: translateY(0); }
+
+.exp-meta {
+  padding-top: .15rem;
+}
+
+.exp-company {
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: .3px;
+  margin-bottom: .2rem;
+}
+
+.exp-period {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--muted);
+  margin-bottom: .3rem;
+}
+
+.exp-location {
+  font-family: var(--mono);
+  font-size: .6rem;
+  color: var(--faint);
+  color: #aaa;
+}
+
+.exp-content {}
+
+.exp-title {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: .4rem;
+}
+
+.exp-context {
+  font-size: .82rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.55;
+}
+
+.exp-bullets {
+  list-style: none;
+  display: grid;
+  gap: .6rem;
+}
+
+.exp-bullets li {
+  font-size: .9rem;
+  color: var(--ink2);
+  line-height: 1.65;
+  padding-left: 1.2rem;
+  position: relative;
+  font-weight: 300;
+}
+
+.exp-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: .7rem;
+  top: .25rem;
+}
+
+.exp-bullets li strong { font-weight: 500; color: var(--ink); }
+
+/* ── SKILLS GRID ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  padding: 1.8rem;
+  background: var(--fainter);
+  border: 1px solid var(--faint);
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.skill-card.visible { opacity: 1; transform: translateY(0); }
+
+.skill-card-label {
+  font-family: var(--mono);
+  font-size: .62rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.skill-card-title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: .8rem;
+}
+
+.skill-list {
+  list-style: none;
+  display: grid;
+  gap: .35rem;
+}
+
+.skill-list li {
+  font-size: .82rem;
+  color: var(--muted);
+  font-weight: 300;
+  padding-left: .9rem;
+  position: relative;
+}
+
+.skill-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ── CREDENTIALS ── */
+.cred-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.cred-item {
+  padding: 1.4rem 1.6rem;
+  border: 1px solid var(--faint);
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.cred-item.visible { opacity: 1; transform: translateY(0); }
+
+.cred-item:hover { border-color: var(--ink); }
+
+.cred-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: .45rem;
+}
+
+.cred-body {}
+
+.cred-title {
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: .15rem;
+  line-height: 1.4;
+}
+
+.cred-issuer {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--muted);
+  margin-bottom: .1rem;
+}
+
+.cred-year {
+  font-family: var(--mono);
+  font-size: .6rem;
+  color: #bbb;
+}
+
+/* ── PROFILE ── */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.profile-card {
+  padding: 2rem;
+  background: var(--fainter);
+  border: 1px solid var(--faint);
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.profile-card.visible { opacity: 1; transform: translateY(0); }
+
+.profile-card-label {
+  font-family: var(--mono);
+  font-size: .62rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .8rem;
+  display: block;
+}
+
+.profile-card-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: .7rem;
+}
+
+.profile-card p {
+  font-size: .86rem;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.profile-card p + p {
+  margin-top: .7rem;
+}
+
+/* Scores row */
+.scores-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: .8rem;
+  margin-top: 2rem;
+}
+
+.score-item {
+  text-align: center;
+  padding: 1rem .5rem;
+  background: var(--fainter);
+  border: 1px solid var(--faint);
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.score-item.visible { opacity: 1; transform: translateY(0); }
+
+.score-trait {
+  font-family: var(--mono);
+  font-size: .58rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .5rem;
+  display: block;
+}
+
+.score-val {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: .3rem;
+  display: block;
+}
+
+.score-bar {
+  height: 3px;
+  background: var(--faint);
+  border-radius: 99px;
+  overflow: hidden;
+  margin: .4rem auto 0;
+  max-width: 50px;
+}
+
+.score-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--accent);
+}
+
+/* Instruments row */
+.instruments-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.instrument-badge {
+  font-family: var(--mono);
+  font-size: .7rem;
+  padding: .4rem .9rem;
+  border: 1px solid var(--faint);
+  border-radius: 3px;
+  color: var(--muted);
+}
+
+.instrument-badge strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Working style items */
+.style-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--faint);
+  border: 1px solid var(--faint);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.style-item {
+  background: var(--white);
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+
+.style-item.visible { opacity: 1; }
+
+.style-item-label {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .4rem;
+  display: block;
+}
+
+.style-item-title {
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: .3rem;
+}
+
+.style-item p {
+  font-size: .82rem;
+  color: var(--muted);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* ── CONTACT ── */
+#contact {
+  text-align: center;
+}
+
+.contact-inner {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.contact-text {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.contact-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--ink);
+  text-decoration: none;
+  padding: .65rem 1.3rem;
+  border: 1px solid var(--faint);
+  border-radius: 3px;
+  transition: border-color .15s, color .15s;
+}
+
+.contact-link:hover { border-color: var(--ink); color: var(--accent); }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--faint);
+  padding: 2rem;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: #ccc;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--faint);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 0 1.2rem; }
+  .nav-links { gap: 1.2rem; }
+  section { padding: 4rem 1.2rem; }
+  .exp-item { grid-template-columns: 1fr; gap: .5rem; }
+  .profile-grid { grid-template-columns: 1fr; }
+  .style-grid { grid-template-columns: 1fr; }
+  .scores-row { grid-template-columns: repeat(3, 1fr); }
+  .hero-cta { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .nav-links { display: none; }
+  .scores-row { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-name">Guillermo R. Cortes</a>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <span class="hero-label">Contracts · Legal Operations · Project Management</span>
+  <h1 class="hero-name">Guillermo<br><em>R. Cortes</em></h1>
+  <p class="hero-role">Legal Operations & Contracts Professional</p>
+  <p class="hero-desc">
+    Nine years across judicial clerking, private practice, commercial operations, and in-house legal — managing complex contract portfolios, deploying CLM systems, and building legal operations from the ground up. US citizen available for immediate relocation.
+  </p>
+  <div class="hero-tags">
+    <span class="tag">US Citizen</span>
+    <span class="tag">Available for relocation</span>
+    <span class="tag">English · Spanish · Portuguese</span>
+    <span class="tag">CLM: Agiloft · NetLex · Ironclad</span>
+    <span class="tag">CLOC Member</span>
+    <span class="tag">200+ simultaneous contracts</span>
+  </div>
+  <div class="hero-cta">
+    <a href="#contact" class="btn-primary">Get in touch</a>
+    <a href="#experience" class="btn-secondary">View experience</a>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-header">
+    <span class="sec-label">Career</span>
+    <h2 class="sec-title">Experience that<br><em>crosses borders.</em></h2>
+  </div>
+
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">AB InBev</div>
+        <div class="exp-period">Aug 2025 — Present</div>
+        <div class="exp-location">LAS Region · Argentina, Bolivia, Chile, Paraguay, Uruguay</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-title">Legal Operations & Contracts Lead</div>
+        <div class="exp-context">AB InBev is the world's largest beer company, operating in 50+ countries with $57B+ in annual revenue.</div>
+        <ul class="exp-bullets">
+          <li>Led end-to-end deployment of a <strong>CLM platform (NetLex)</strong> and Legal Intake system, managing full project lifecycle — scoping, stakeholder onboarding across 6 business functions, and go-live delivery — consolidating 150+ monthly legal requests into a single tracked intake within 90 days.</li>
+          <li>Integrated <strong>AI-assisted contract review tools</strong> into standard workflows, reducing average review cycle time by ~40% and enabling the team to absorb a 25% increase in matter volume without additional headcount.</li>
+          <li>Managed concurrent cross-functional workload spanning contracts, corporate governance, litigation coordination, and external vendor relationships across three entities.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">CONMEBOL</div>
+        <div class="exp-period">Apr 2023 — Jan 2025</div>
+        <div class="exp-location">South America · Miami, FL</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-title">Commercial Contracts Specialist</div>
+        <div class="exp-context">CONMEBOL is South America's governing body for football. Copa América USA 2024 spanned 14 US host cities.</div>
+        <ul class="exp-bullets">
+          <li>Managed a portfolio of <strong>200+ simultaneous commercial contracts</strong> across procurement, licensing, sponsorships, and technology for one of the world's largest sporting events.</li>
+          <li>Coordinated directly with <strong>14 US host cities and 30+ external counterparties</strong> — drafting, reviewing, and redlining MSAs, NDAs, licensing and sponsorship agreements in a fully trilingual environment.</li>
+          <li>Built and maintained a live contract repository achieving a <strong>95%+ on-time execution rate</strong> across the full event cycle.</li>
+          <li>Operated with high autonomy across a geographically distributed operation under tight event-driven deadlines.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">Berkemeyer</div>
+        <div class="exp-period">Nov 2022 — Apr 2023</div>
+        <div class="exp-location">Asunción, Paraguay</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-title">Attorney at Law — International Business & Corporate</div>
+        <div class="exp-context">Paraguay's leading full-service law firm, consistently ranked in Chambers & Partners Latin America.</div>
+        <ul class="exp-bullets">
+          <li>Advised international clients on corporate transactions, commercial contracts, and cross-border business structuring under Paraguayan and international law.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">Pintupar</div>
+        <div class="exp-period">Oct 2020 — Nov 2022</div>
+        <div class="exp-location">Asunción, Paraguay</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-title">Business Manager — Commercial & Operations</div>
+        <div class="exp-context">Commercial manufacturer and distribution company. Assumed full leadership during an ownership transition period.</div>
+        <ul class="exp-bullets">
+          <li>Led commercial and procurement operations and provided legal support on contracts, labor, and regulatory compliance — a <strong>hybrid operations and project management role with P&L accountability.</strong></li>
+          <li>Used data analysis to drive planning and efficiency initiatives; successfully handed off to a recruited and mentored permanent General Manager.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">Corte Suprema de Justicia</div>
+        <div class="exp-period">Oct 2016 — Mar 2020</div>
+        <div class="exp-location">Asunción, Paraguay</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-title">Judicial Legal Clerk — Civil & Commercial</div>
+        <div class="exp-context">One of the first three courts selected for Paraguay's national paperless case management pilot program.</div>
+        <ul class="exp-bullets">
+          <li>Provided legal research and analytical support across a high-volume civil and commercial docket — drafting case summaries, reviewing filings, and supporting judicial reasoning and opinion structuring.</li>
+          <li>Early exposure to <strong>technology-driven legal process</strong> at a court pioneering digital case management nationally.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-header">
+    <span class="sec-label">Capabilities</span>
+    <h2 class="sec-title">What I bring<br><em>to the table.</em></h2>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-card">
+      <span class="skill-card-label">Contracts</span>
+      <div class="skill-card-title">Contract Management</div>
+      <ul class="skill-list">
+        <li>Drafting, review & negotiation</li>
+        <li>MSAs, NDAs, licensing & sponsorship agreements</li>
+        <li>Commercial and procurement contracts</li>
+        <li>Government and event-driven contracting</li>
+        <li>Portfolio tracking & obligation management</li>
+        <li>95%+ on-time execution at 200+ contract scale</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <span class="skill-card-label">Legal Operations</span>
+      <div class="skill-card-title">Legal Ops & CLM</div>
+      <ul class="skill-list">
+        <li>CLM implementation & administration</li>
+        <li>NetLex (daily admin), Agiloft (certified), Ironclad</li>
+        <li>Legal intake system design and deployment</li>
+        <li>AI-assisted contract review integration</li>
+        <li>Process design and workflow optimization</li>
+        <li>Matter management and outside counsel coordination</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <span class="skill-card-label">Project Management</span>
+      <div class="skill-card-title">Project Delivery</div>
+      <ul class="skill-list">
+        <li>UT Austin McCombs PM Certificate</li>
+        <li>CAPM in progress (PMI)</li>
+        <li>Full project lifecycle management</li>
+        <li>Cross-functional stakeholder coordination</li>
+        <li>Risk identification and mitigation</li>
+        <li>Jira, Monday.com, Microsoft Project</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <span class="skill-card-label">Tools & Technology</span>
+      <div class="skill-card-title">Tech Stack</div>
+      <ul class="skill-list">
+        <li>Microsoft 365, SharePoint, DocuSign</li>
+        <li>AI tools: Claude, Gemini, Copilot, Perplexity</li>
+        <li>CLM: NetLex, Agiloft, Ironclad, Luminance</li>
+        <li>PM: Jira, Monday.com, Microsoft Project</li>
+        <li>Data analysis and reporting</li>
+        <li>Digital legal workflow design</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <span class="skill-card-label">Cross-functional</span>
+      <div class="skill-card-title">Soft Skills & Strengths</div>
+      <ul class="skill-list">
+        <li>Bilingual stakeholder management (EN/ES)</li>
+        <li>Analytical writing and legal drafting</li>
+        <li>Process design and systems thinking</li>
+        <li>Risk identification and judgment</li>
+        <li>High autonomy with low oversight needed</li>
+        <li>Cross-cultural and multi-jurisdictional fluency</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <span class="skill-card-label">Languages</span>
+      <div class="skill-card-title">Communication</div>
+      <ul class="skill-list">
+        <li>English — Native / Fluent (C2)</li>
+        <li>Spanish — Native</li>
+        <li>Portuguese — Intermediate</li>
+        <li>Trilingual contract negotiation experience</li>
+        <li>Cross-border counterparty management</li>
+        <li>US and Latin American legal frameworks</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section id="credentials">
+  <div class="sec-header">
+    <span class="sec-label">Education & Certifications</span>
+    <h2 class="sec-title">Continuous<br><em>learning.</em></h2>
+  </div>
+
+  <div class="cred-grid">
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div class="cred-body">
+        <div class="cred-title">PGCert in International Business Law — Distinction</div>
+        <div class="cred-issuer">University of Liverpool</div>
+        <div class="cred-year">2025 — 2026 · In Progress</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div class="cred-body">
+        <div class="cred-title">Project Management Certificate</div>
+        <div class="cred-issuer">University of Texas at Austin — McCombs School of Business</div>
+        <div class="cred-year">2026</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div class="cred-body">
+        <div class="cred-title">CAPM — Certified Associate in Project Management</div>
+        <div class="cred-issuer">Project Management Institute (PMI)</div>
+        <div class="cred-year">2026 · In Progress</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div class="cred-body">
+        <div class="cred-title">Commercial Awareness Certificate</div>
+        <div class="cred-issuer">WorldCC — World Commerce & Contracting</div>
+        <div class="cred-year">2024</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div class="cred-body">
+        <div class="cred-title">Commercial Contracts Fundamentals</div>
+        <div class="cred-issuer">UC Berkeley Extension</div>
+        <div class="cred-year">2024</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div class="cred-body">
+        <div class="cred-title">Business Analytics · Economics for Managers · Financial Accounting · Negotiation Mastery</div>
+        <div class="cred-issuer">Harvard Business School Online</div>
+        <div class="cred-year">2022 — 2023</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div class="cred-body">
+        <div class="cred-title">Science of Happiness at Work · Power of Awareness</div>
+        <div class="cred-issuer">UC Berkeley — Greater Good Science Center</div>
+        <div class="cred-year">2024</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div class="cred-body">
+        <div class="cred-title">Mindfulness and Teams · Mindfulness and Optimal Performance</div>
+        <div class="cred-issuer">University of Toronto — School of Continuing Studies</div>
+        <div class="cred-year">2024</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div class="cred-body">
+        <div class="cred-title">LLB — Law</div>
+        <div class="cred-issuer">Universidad Nacional de Asunción</div>
+        <div class="cred-year">2016 — 2021</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot" style="background:#ccc;"></div>
+      <div class="cred-body">
+        <div class="cred-title">CCMA — Certified Commercial Management Associate</div>
+        <div class="cred-issuer">NCMA — National Contract Management Association</div>
+        <div class="cred-year">Planned 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section id="profile">
+  <div class="sec-header">
+    <span class="sec-label">Working Style & Personality</span>
+    <h2 class="sec-title">How I work,<br><em>who I am.</em></h2>
+  </div>
+
+  <div class="profile-grid">
+
+    <div class="profile-card">
+      <span class="profile-card-label">The short version</span>
+      <div class="profile-card-title">What to expect</div>
+      <p>I work best with defined scope and genuine autonomy inside it. Once I understand the context and the rationale, I require minimal oversight to deliver — and I deliver above what is asked for.</p>
+      <p>I am direct, precise, and flag problems early. I do not soften bad news beyond what clarity requires. I think before I speak, write carefully, and hold positions that are reasoned.</p>
+      <p>I am most effective in roles combining genuine complexity, real ownership of outcomes, and work that matters. I am least effective in high-volume processing roles or environments where visibility is rewarded over output.</p>
+    </div>
+
+    <div class="profile-card">
+      <span class="profile-card-label">Personality instruments</span>
+      <div class="profile-card-title">Multi-instrument profile</div>
+      <p>Three independent instruments consistently point in the same direction: depth over breadth, precision over speed, quality of relationships over quantity, and a preference for building something rather than maintaining something.</p>
+      <div class="instruments-row">
+        <div class="instrument-badge"><strong>MBTI</strong> IN__</div>
+        <div class="instrument-badge"><strong>DISC</strong> IS / SI</div>
+        <div class="instrument-badge"><strong>OCEAN</strong> O:85 C:65 N:40</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="scores-row" style="margin-top: 2rem;">
+    <div class="score-item">
+      <span class="score-trait">Openness</span>
+      <span class="score-val">85</span>
+      <div class="score-bar"><div class="score-bar-fill" style="width:85%"></div></div>
+    </div>
+    <div class="score-item">
+      <span class="score-trait">Conscientiousness</span>
+      <span class="score-val">65</span>
+      <div class="score-bar"><div class="score-bar-fill" style="width:65%"></div></div>
+    </div>
+    <div class="score-item">
+      <span class="score-trait">Extraversion</span>
+      <span class="score-val">43</span>
+      <div class="score-bar"><div class="score-bar-fill" style="width:43%"></div></div>
+    </div>
+    <div class="score-item">
+      <span class="score-trait">Agreeableness</span>
+      <span class="score-val">63</span>
+      <div class="score-bar"><div class="score-bar-fill" style="width:63%"></div></div>
+    </div>
+    <div class="score-item">
+      <span class="score-trait">Neuroticism</span>
+      <span class="score-val">40</span>
+      <div class="score-bar"><div class="score-bar-fill" style="width:40%"></div></div>
+    </div>
+  </div>
+
+  <div class="style-grid" style="margin-top: 2.5rem;">
+    <div class="style-item">
+      <span class="style-item-label">Communication</span>
+      <div class="style-item-title">Direct and precise</div>
+      <p>Written over verbal for complex matters. Concise in meetings. Flags problems early and does not dress up bad news. No performative communication.</p>
+    </div>
+    <div class="style-item">
+      <span class="style-item-label">Autonomy</span>
+      <div class="style-item-title">Self-directed</div>
+      <p>Performs best with defined scope and genuine ownership. Provides context and rationale once, then executes. Does not require hand-holding or repeated check-ins.</p>
+    </div>
+    <div class="style-item">
+      <span class="style-item-label">Decision-making</span>
+      <div class="style-item-title">Thorough then decisive</div>
+      <p>Takes time to consider variables before committing. Acts with clarity once a position is formed. Comfortable owning difficult calls.</p>
+    </div>
+    <div class="style-item">
+      <span class="style-item-label">Team dynamics</span>
+      <div class="style-item-title">Collaborative, not performative</div>
+      <p>Reliable, non-disruptive, supports others when asked. Invests deeply in small, high-trust team configurations. Social energy is selective and genuine.</p>
+    </div>
+    <div class="style-item">
+      <span class="style-item-label">Optimal environment</span>
+      <div class="style-item-title">Complex, varied, consequential</div>
+      <p>Thrives where work has real stakes and genuine judgment is required. Building, designing, and improving systems beats maintaining them.</p>
+    </div>
+    <div class="style-item">
+      <span class="style-item-label">Growth areas</span>
+      <div class="style-item-title">Named honestly</div>
+      <p>Early-stage relationship signalling — warmth takes time to show. Standards can slow delivery on low-stakes tasks. Actively calibrating both.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-header" style="text-align:center;">
+    <span class="sec-label" style="display:block;text-align:center;">Contact</span>
+    <h2 class="sec-title" style="text-align:center;">Let's talk<br><em>seriously.</em></h2>
+  </div>
+  <div class="contact-inner">
+    <p class="contact-text">
+      I am a US citizen currently relocating and available for immediate opportunities in contracts management, legal operations, compliance, and related fields. Preferred cities: Boise ID, Salt Lake City UT, Denver CO.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:guillermocortesds@gmail.com" class="contact-link">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        guillermocortesds@gmail.com
+      </a>
+      <a href="https://linkedin.com/in/guillermo-cortes" target="_blank" class="contact-link">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Guillermo R. Cortes · Contracts & Legal Operations · US Citizen · Available for relocation · 2026</p>
+</footer>
+
+<script>
+// Scroll-triggered reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, entry.target.dataset.delay || 0);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+// Stagger delays for grouped elements
+document.querySelectorAll('.exp-item').forEach((el, i) => {
+  el.dataset.delay = i * 80;
+  observer.observe(el);
+});
+
+document.querySelectorAll('.skill-card').forEach((el, i) => {
+  el.dataset.delay = i * 60;
+  observer.observe(el);
+});
+
+document.querySelectorAll('.cred-item').forEach((el, i) => {
+  el.dataset.delay = i * 50;
+  observer.observe(el);
+});
+
+document.querySelectorAll('.profile-card').forEach((el, i) => {
+  el.dataset.delay = i * 80;
+  observer.observe(el);
+});
+
+document.querySelectorAll('.score-item').forEach((el, i) => {
+  el.dataset.delay = i * 60;
+  observer.observe(el);
+});
+
+document.querySelectorAll('.style-item').forEach((el, i) => {
+  el.dataset.delay = i * 50;
+  observer.observe(el);
+});
+
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--ink)' : '';
+  });
+});
+</script>
+
+</body>
+</html>
